@@ -27,12 +27,12 @@ type man struct{
 	tech tech 
 }
 
-type str [][][]struct{
+type str struct{
 	man []man
 }
 
 type obj struct{
-	str str
+	str [][][]str
 }
 
 type fruit struct{
@@ -78,7 +78,7 @@ func main()  {
 	// 		}},
 	// 	}
 	obj := obj{
-		str: str{3: {1:{2: {
+		str: [][][]str{3: {1:{2: {
 			man: []man{{
 				tech: tech{
 					academy: "Tech Academy",
