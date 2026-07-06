@@ -61,24 +61,34 @@ func main()  {
 		world: "Hello World",
 	}
 
+	// obj := obj{
+	// 	str: make(str, 4),
+	// }
+
+
+	// obj.str[3] = make([][]struct{man []man}, 2)
+	// obj.str[3][1] = make([]struct{man []man}, 3)
+	// obj.str[3][1][2] = struct{
+	// 	man []man
+	// 	}{
+	// 		man: []man{{
+	// 			tech: tech{
+	// 				academy: "Tech Academy",
+	// 			},
+	// 		}},
+	// 	}
 	obj := obj{
-		str: make(str, 4),
-	}
-
-
-	obj.str[3] = make([][]struct{man []man}, 2)
-	obj.str[3][1] = make([]struct{man []man}, 3)
-	obj.str[3][1][2] = struct{
-		man []man
-		}{
+		str: str{3: {1:{2: {
 			man: []man{{
 				tech: tech{
 					academy: "Tech Academy",
 				},
-			}},
-		}
+			},},
+		},},},},
+	}
+
 	my := []my{{
-		favourite: []favourite{{},{},{},{
+		favourite: []favourite{3: {
 			fruit: fruit{
 				is: "Apple",
 			},
