@@ -20,6 +20,23 @@ type hello struct{
 	world string
 }
 
+type tech struct{
+	academy string
+}
+type man struct{
+	tech tech 
+}
+
+type str [][][]struct{
+	man []man
+}
+
+type obj struct{
+	str str
+}
+type structNull struct{
+
+}
 
 func main()  {
 	we := we{
@@ -33,6 +50,27 @@ func main()  {
 	hello := hello{
 		world: "Hello World",
 	}
+
+	obj := obj{
+		str: make(str, 4),
+	}
+
+
+	obj.str[3] = make([][]struct{man []man}, 2)
+	obj.str[3][1] = make([]struct{man []man}, 3)
+	obj.str[3][1][2] = struct{
+		man []man
+		}{
+			man: []man{{
+				tech: tech{
+					academy: "Tech Academy",
+				},
+			}},
+		}
+
+
+	fmt.Println(obj.str[3][1][2].man[0].tech.academy)
+
 	fmt.Println(we.are.the.best)
 	fmt.Println(hello.world)
 
