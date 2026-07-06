@@ -34,9 +34,19 @@ type str [][][]struct{
 type obj struct{
 	str str
 }
-type structNull struct{
 
+type fruit struct{
+	is string
 }
+
+type favourite struct{
+	fruit fruit
+}
+
+type my struct{
+	favourite []favourite
+}
+
 
 func main()  {
 	we := we{
@@ -67,13 +77,18 @@ func main()  {
 				},
 			}},
 		}
-
-
-	fmt.Println(obj.str[3][1][2].man[0].tech.academy)
+	my := []my{{
+		favourite: []favourite{{},{},{},{
+			fruit: fruit{
+				is: "Apple",
+			},
+		},},
+	},}
 
 	fmt.Println(we.are.the.best)
 	fmt.Println(hello.world)
-
+	fmt.Println(obj.str[3][1][2].man[0].tech.academy)
+	fmt.Println(my[0].favourite[3].fruit.is)
 
 
 }
